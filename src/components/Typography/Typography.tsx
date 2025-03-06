@@ -5,11 +5,12 @@ import { TypographyProps } from "./Typography.d";
 export const Typography: FC<TypographyProps> = ({
   children,
   variant = "body1",
+  sx = {},
   ...rest
 }) => {
-  const { fontWeight, ...restProps } = rest;
+  const { fontWeight, color, ...restProps } = rest;
   return (
-    <Box sx={{ typography: variant, fontWeight }} {...restProps}>
+    <Box sx={{ typography: variant, fontWeight, color, ...sx }} {...restProps}>
       {children}
     </Box>
   );
