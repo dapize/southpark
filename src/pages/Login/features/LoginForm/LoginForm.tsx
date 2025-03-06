@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { ILoginFormFields } from "./LoginForm.d";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { LoginFormSchema } from "./LoginForm.schema";
+import { YellowButton } from "@components/YellowButton";
 
 export const LoginForm = () => {
   const { register, handleSubmit } = useForm<ILoginFormFields>({
@@ -24,6 +25,7 @@ export const LoginForm = () => {
         fontWeight={700}
         textAlign="center"
         component="h4"
+        color="white"
       >
         Sign In
       </Typography>
@@ -46,22 +48,7 @@ export const LoginForm = () => {
         {...register("password")}
       />
 
-      <Typography
-        component="button"
-        variant="button"
-        bgcolor="#fc0"
-        height={42}
-        width="100%"
-        border={0}
-        fontWeight={700}
-        color="#000"
-        sx={{
-          ":hover": { opacity: 0.85, cursor: "pointer" },
-          transition: "opacity 0.1s ease-in-out",
-        }}
-      >
-        Sign In
-      </Typography>
+      <YellowButton width="100%">Sign In</YellowButton>
     </S.Form>
   );
 };

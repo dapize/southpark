@@ -16,5 +16,6 @@ export const globalStyles = css`
   body {
     padding: 0;
     margin: 0;
+    font-weight: 400;
   }
 `

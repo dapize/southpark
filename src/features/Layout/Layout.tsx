@@ -10,13 +10,21 @@ export const Layout = () => {
       width="100%"
       minHeight="100vh"
       flexDirection="column"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
-      bgcolor="#000"
+      bgcolor="#f8f8f8"
     >
       <Header />
-      <Box component="main" width="100%" paddingBlock={4} maxWidth={1440}>
-        <Outlet />
+      <Box
+        component="main"
+        width="100%"
+        paddingBlock={4}
+        position="relative"
+        minHeight="calc(100vh - 185px)"
+      >
+        <Box maxWidth={1440} marginLeft="auto" marginRight="auto">
+          <Outlet />
+        </Box>
       </Box>
       <Footer />
     </Box>

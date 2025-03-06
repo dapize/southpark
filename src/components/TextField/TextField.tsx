@@ -26,6 +26,7 @@ export const TextField: FC<TextFieldProps> = ({
         sx={{
           typography: "subtitle2",
           fontWeight: 700,
+          color: "white",
           outline: 0,
           ":focus, :not(:placeholder-shown)": {
             borderColor: "white",
@@ -34,6 +35,7 @@ export const TextField: FC<TextFieldProps> = ({
               left: 0,
               typography: "body2",
               fontWeight: 700,
+              color: "white",
             },
           },
           "::placeholder": {
@@ -45,12 +47,12 @@ export const TextField: FC<TextFieldProps> = ({
       <Box
         component="label"
         htmlFor={id}
-        color="white"
         sx={{
           typography: "subtitle2",
           pointerEvents: "none",
           transition: "top .16s ease-in-out, left .15s ease-in-out",
         }}
+        color="white"
         position="absolute"
         left={15}
         top={15}

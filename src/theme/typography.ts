@@ -1,7 +1,5 @@
 const base = {
   fontFamily: 'Montserrat, sans-serif',
-  color: '#fff',
-  fontWeight: 400,
 };
 
 export const typography = {

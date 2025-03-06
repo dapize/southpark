@@ -8,9 +8,12 @@ export const Typography: FC<TypographyProps> = ({
   sx = {},
   ...rest
 }) => {
-  const { fontWeight, color, ...restProps } = rest;
+  const { fontWeight, color, lineHeight, ...restProps } = rest;
   return (
-    <Box sx={{ typography: variant, fontWeight, color, ...sx }} {...restProps}>
+    <Box
+      sx={{ typography: variant, fontWeight, color, lineHeight, ...sx }}
+      {...restProps}
+    >
       {children}
     </Box>
   );

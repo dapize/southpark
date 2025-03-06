@@ -10,9 +10,10 @@ export const Footer = () => {
       justifyContent="center"
       alignItems="center"
       height={75}
-      marginTop="auto"
       width="100%"
       fontWeight="bold"
+      textAlign="center"
+      paddingInline={2}
     >
       © 2025 South Park - no rights reserved, I always wanted to say that XD
     </Typography>
