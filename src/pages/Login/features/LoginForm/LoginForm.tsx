@@ -1,25 +1,30 @@
 import { TextField } from "@components/TextField";
 import { Typography } from "@components/Typography";
-import { Box } from "@mui/system";
+import * as S from "./LoginForm.styled";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { ILoginFormFields } from "./LoginForm.d";
+import { joiResolver } from "@hookform/resolvers/joi";
+import { LoginFormSchema } from "./LoginForm.schema";
 
 export const LoginForm = () => {
+  const { register, handleSubmit } = useForm<ILoginFormFields>({
+    resolver: joiResolver(LoginFormSchema),
+  });
+
+  const handleOnSubmit: SubmitHandler<ILoginFormFields> = (
+    data: ILoginFormFields
+  ) => {
+    console.log(data);
+  };
+
   return (
-    <Box
-      bgcolor="#111"
-      p="35px 42px"
-      borderRadius={1.5}
-      display="flex"
-      marginLeft="auto"
-      marginRight="auto"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      maxWidth={480}
-      width="80%"
-      rowGap={4}
-      component="form"
-    >
-      <Typography variant="h4" fontWeight={700} textAlign="center">
+    <S.Form onSubmit={handleSubmit(handleOnSubmit)}>
+      <Typography
+        variant="h4"
+        fontWeight={700}
+        textAlign="center"
+        component="h4"
+      >
         Sign In
       </Typography>
       <TextField
@@ -29,6 +34,7 @@ export const LoginForm = () => {
         type="email"
         fullWidth
         required
+        {...register("email")}
       />
       <TextField
         id="password"
@@ -37,6 +43,7 @@ export const LoginForm = () => {
         placeholder="Password"
         fullWidth
         required
+        {...register("password")}
       />
 
       <Typography
@@ -55,6 +62,6 @@ export const LoginForm = () => {
       >
         Sign In
       </Typography>
-    </Box>
+    </S.Form>
   );
 };
