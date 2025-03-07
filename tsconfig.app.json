@@ -38,7 +38,9 @@
       "@features":["features"],
       "@features/*":["features/*"],
       "@theme":["theme"],
-      "@theme/*":["theme/*"]
+      "@theme/*":["theme/*"],
+      "@routes":["routes"],
+      "@routes/*":["routes/*"]
     }
   },
   "include": ["src"]
