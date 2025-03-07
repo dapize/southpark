@@ -1,3 +1,5 @@
+import { EpisodeItemProps } from "@pages/Home/features/EpisodeList/components/EpisodeItem";
+
 export interface ILink {
   url?: string;
   label: string;
@@ -23,7 +25,7 @@ export interface ILinks {
   first: string;
   last: string;
   prev: string | null;
-  next: string;
+  next: string | null;
 }
 
 export interface IMeta {
@@ -50,6 +52,6 @@ export interface IGetEpisodeResponse {
 export interface IGetEpisodeList{
   currentPage: number;
   lastPage: number;
-  list: IEPisode[];
+  list: EpisodeItemProps[];
 }
 
