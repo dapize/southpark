@@ -1,26 +1,40 @@
 import { FC } from "react";
-import { Typography, TypographyProps } from "@components/Typography";
+import { Box } from "@mui/system";
+import * as S from "./YellowButton.styled";
+import { YellowButtonProps } from "./YellowButton.d";
 
-export const YellowButton: FC<TypographyProps> = ({ children, ...rest }) => {
+export const YellowButton: FC<YellowButtonProps> = ({ children, ...rest }) => {
+  const { isLoading = false, ...restProps } = rest;
   return (
-    <Typography
+    <Box
       component="button"
-      variant="button"
       bgcolor="#fc0"
       height={42}
       border={0}
-      fontWeight={700}
-      color="#000"
-      display="block"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      columnGap={2}
       marginLeft="auto"
       marginRight="auto"
+      disabled={isLoading}
       sx={{
         ":hover": { opacity: 0.85, cursor: "pointer" },
         transition: "opacity 0.1s ease-in-out",
+        typography: "button",
       }}
-      {...rest}
+      fontWeight={700}
+      color="#000"
+      {...restProps}
     >
-      {children}
-    </Typography>
+      {isLoading ? (
+        <>
+          Loading...
+          <S.Spinning></S.Spinning>
+        </>
+      ) : (
+        children
+      )}
+    </Box>
   );
 };

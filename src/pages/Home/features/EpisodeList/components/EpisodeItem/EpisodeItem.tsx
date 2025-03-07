@@ -30,6 +30,11 @@ export const EpisodeItem: FC<EpisodeItemProps> = ({
           variant="subtitle2"
           mb={1.2}
           fontWeight={700}
+          overflow="hidden"
+          whiteSpace="nowrap"
+          textOverflow="ellipsis"
+          width="100%"
+          flexShrink={0}
         >
           {title}
         </Typography>

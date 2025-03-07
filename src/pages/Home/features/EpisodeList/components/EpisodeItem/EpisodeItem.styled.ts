@@ -50,31 +50,22 @@ export const Content = styled('div', { shouldForwardProp })<{$fullWidth?: boolea
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    height: '175px'
+    height: '145px'
   };
   if (!$fullWidth) {
     styles = {
       ...styles,
       [theme.breakpoints.up('sm')]: {
-        height: '200px'
-      },
-      [theme.breakpoints.up('md')]: {
         height: '160px'
       },
-      [theme.breakpoints.between('lg', 'xl')]: {
-        height: '185px'
-      },
-      [theme.breakpoints.up('xxl')]: {
-        height: '140px'
+      [theme.breakpoints.up('md')]: {
+        height: '150px'
       },
     }
   } else {
     styles = {
       ...styles,
       [theme.breakpoints.up('sm')]: {
-        height: '120px'
-      },
-      [theme.breakpoints.up('md')]: {
         height: '100px'
       },
       [theme.breakpoints.up('lg')]: {
@@ -87,9 +78,9 @@ export const Content = styled('div', { shouldForwardProp })<{$fullWidth?: boolea
 
 export const Thumbnail = styled('img', { shouldForwardProp })<{$fullWidth?: boolean}>(({theme, $fullWidth}) => {
   let styles: CSSObject = {
-    maxWidth: '100%',
     aspectRatio: '16/9',
-    minHeight: 175
+    minHeight: 175,
+    width: '100%'
   };
   if ($fullWidth) {
     styles = {

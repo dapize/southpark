@@ -1,5 +1,5 @@
-import { EpisodeItemProps } from './components/EpisodeItem';
+import { IGetEpisodeItem } from "@services/episodes";
 
 export interface EpisodeListProps {
-  list: EpisodeItemProps[]
+  list: IGetEpisodeItem[]
 }

@@ -1,10 +1,6 @@
-export interface EpisodeItemProps {
-  season: number;
-  episode: number;
-  thumbnailUrl: string;
-  title: string;
-  description: string;
-  airDate: string;
+import { IGetEpisodeItem } from "@services/episodes";
+
+export interface EpisodeItemProps extends IGetEpisodeItem {
   linkTo: string;
   fullWidth?: boolean;
 }

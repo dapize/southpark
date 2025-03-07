@@ -69,7 +69,6 @@ export const typography = {
   },
   button: {
     ...base,
-    fontWeight: 500,
     fontSize: '0.875rem',
     lineHeight: 1.75,
     letterSpacing: '0.02857em',

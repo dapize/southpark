@@ -1,5 +1,7 @@
 import Box from "@mui/system/Box";
 import Logo from "./assets/logo.png";
+import { Link } from "react-router";
+import { routes } from "@routes/routes";
 
 export const Header = () => {
   return (
@@ -12,13 +14,9 @@ export const Header = () => {
       alignItems="center"
       width="100%"
     >
-      <Box
-        component="img"
-        src={Logo}
-        marginBlock="auto"
-        width={445}
-        maxWidth="90%"
-      />
+      <Box component={Link} to={routes.home} width={445} maxWidth="90%">
+        <Box component="img" src={Logo} marginBlock="auto" width="100%" />
+      </Box>
     </Box>
   );
 };

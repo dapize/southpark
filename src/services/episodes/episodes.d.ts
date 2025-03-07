@@ -49,9 +49,22 @@ export interface IGetEpisodeResponse {
   data: IEPisode;
 }
 
+export interface IGetEpisodeItem {
+  id: number;
+  season: number;
+  episode: number;
+  thumbnailUrl: string;
+  title: string;
+  description: string;
+  airDate: string;
+}
+
+export interface IGetEpisode extends IGetEpisodeItem {
+  wikiUrl: string;
+}
+
 export interface IGetEpisodeList{
   currentPage: number;
   lastPage: number;
-  list: EpisodeItemProps[];
+  list: IGetEpisodeItem[];
 }
-

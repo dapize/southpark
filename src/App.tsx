@@ -4,6 +4,7 @@ import { Global } from "@emotion/react";
 import { theme } from "@theme/theme";
 import { globalStyles } from "@theme/globalStyles";
 import { AppRoutes } from "@routes/Routes";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function App() {
   const queryClient = new QueryClient({
