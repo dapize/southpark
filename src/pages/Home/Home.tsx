@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
 import { Box } from "@mui/system";
 import { EpisodeList } from "./features/EpisodeList";
 import { YellowButton } from "@components/YellowButton";
@@ -6,17 +7,18 @@ import { useQuery } from "@tanstack/react-query";
 import { getEpisodeList, IGetEpisodeItem } from "@services/episodes";
 
 export const Home = () => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [episodeList, setEpisodeList] = useState<IGetEpisodeItem[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const { data, isSuccess, refetch, isLoading } = useQuery({
-    queryKey: ["episodes", currentPage],
-    queryFn: () => getEpisodeList(currentPage),
+    queryKey: ["episodes", searchParams.get("page")],
+    queryFn: () => getEpisodeList(searchParams.get("page")!),
     enabled: false,
   });
 
   const handleOnClickMore = () => {
-    setCurrentPage((page) => page + 1);
+    const currentPage = searchParams.get("page");
+    setSearchParams({ page: `${Number(currentPage) + 1}` });
   };
 
   useEffect(() => {
@@ -26,8 +28,13 @@ export const Home = () => {
   }, [data?.list, isSuccess]);
 
   useEffect(() => {
-    refetch();
-  }, [currentPage, refetch]);
+    const page = searchParams.get("page");
+    if (page) {
+      refetch();
+    } else {
+      setSearchParams({ page: "1" });
+    }
+  }, [refetch, searchParams, setSearchParams]);
 
   return (
     <Box paddingInline={3}>

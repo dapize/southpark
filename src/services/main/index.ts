@@ -1,1 +1,1 @@
-export { apiData } from './data'
+export { apiData } from './main'

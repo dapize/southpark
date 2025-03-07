@@ -1,7 +1,7 @@
 import { apiData } from "@services/main"
 import { IGetEpisodesResponse, IGetEpisodeList, IGetEpisodeResponse, IGetEpisode } from './episodes.d';
 
-export const getEpisodeList = async(page: number = 1): Promise<IGetEpisodeList> => {
+export const getEpisodeList = async(page: string = '1'): Promise<IGetEpisodeList> => {
   const request = await apiData.get<IGetEpisodesResponse>(`/episodes?page=${page}`);
   const { data: list, meta: { current_page: currentPage, last_page: lastPage } } = request.data;
   return {

@@ -80,7 +80,7 @@ export const Thumbnail = styled('img', { shouldForwardProp })<{$fullWidth?: bool
   let styles: CSSObject = {
     aspectRatio: '16/9',
     minHeight: 175,
-    width: '100%'
+    width: '100%',
   };
   if ($fullWidth) {
     styles = {

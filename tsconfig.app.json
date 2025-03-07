@@ -40,7 +40,9 @@
       "@theme":["theme"],
       "@theme/*":["theme/*"],
       "@routes":["routes"],
-      "@routes/*":["routes/*"]
+      "@routes/*":["routes/*"],
+      "@hooks":["hooks"],
+      "@hooks/*":["hooks/*"]
     }
   },
   "include": ["src"]

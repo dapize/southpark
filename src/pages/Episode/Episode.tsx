@@ -65,15 +65,19 @@ export const Episode = () => {
             component="a"
             href={data?.wikiUrl}
             sx={{ typography: "body2" }}
-            mb={4}
-            display="block"
             target="_blank"
             color="#000"
             fontWeight={700}
           >
             {data?.wikiUrl}
           </Box>
-          <Typography color="#767676" variant="overline" lineHeight={1}>
+          <Typography
+            color="#767676"
+            variant="overline"
+            lineHeight={1}
+            display="block"
+            mt={4}
+          >
             {data?.airDate}
           </Typography>
         </Box>
