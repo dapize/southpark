@@ -90,7 +90,7 @@ export const Thumbnail = styled('img', { shouldForwardProp })<{$fullWidth?: bool
         flexShrink: 0,
       },
       [theme.breakpoints.up('xl')]:{
-        width: '65%',
+        width: '66%',
         flexShrink: 0,
       }
     }
