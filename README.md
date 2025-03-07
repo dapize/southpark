@@ -3,6 +3,7 @@
 South Park App es una aplicación web creada para los fans de la serie **South Park**. La aplicación permite visualizar la lista de episodios, ver detalles de cada uno y gestionar usuarios a través de un sistema de autenticación. Se desarrolló utilizando **React** y **TypeScript** con **Vite** como herramienta de construcción, lo que garantiza un rendimiento óptimo y una experiencia de usuario moderna.
 
 -   [Demo Link](https://southpark-danielpz.netlify.app)
+-   [Video de presentación](https://www.youtube.com/watch?v=bdlhzKgjspA)
 
 ## Características
 
@@ -30,7 +31,7 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 1. **Clonar el repositorio:**
 
 ```bash
-git clone https://github.com/tuusuario/southpark.git
+git clone https://github.com/dapize/southpark.git
 ```
 
 2. **Instalar dependencias:**
