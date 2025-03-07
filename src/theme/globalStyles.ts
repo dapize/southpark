@@ -4,11 +4,6 @@ import emotionReset from 'emotion-reset';
 export const globalStyles = css`
   ${emotionReset}
 
-  #root {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
-
   *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -17,5 +12,13 @@ export const globalStyles = css`
     padding: 0;
     margin: 0;
     font-weight: 400;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  input[data-autocompleted] {
+    background-color: transparent !important;
   }
 `

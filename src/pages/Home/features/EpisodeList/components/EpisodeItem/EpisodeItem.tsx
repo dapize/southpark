@@ -17,7 +17,7 @@ export const EpisodeItem: FC<EpisodeItemProps> = ({
 }) => {
   return (
     <S.Wrapper $fullWidth={fullWidth}>
-      <S.Thumbnail src={thumbnailUrl} $fullWidth={fullWidth} />
+      <S.Thumbnail loading="lazy" src={thumbnailUrl} $fullWidth={fullWidth} />
       <Box
         p={{ xs: 2, sm: 3 }}
         display="flex"

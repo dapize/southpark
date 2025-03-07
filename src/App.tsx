@@ -3,6 +3,7 @@ import { Layout } from "@features/Layout";
 import { Home } from "@pages/Home";
 import { Login } from "@pages/Login";
 import { Demo } from "@pages/Demo";
+import { NotFound } from "@pages/NotFound";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

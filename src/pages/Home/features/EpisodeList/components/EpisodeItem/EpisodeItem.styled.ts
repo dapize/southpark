@@ -20,10 +20,11 @@ export const Wrapper = styled('li', {
     styles = {
       ...styles,
       [theme.breakpoints.up('sm')]: {
+        flexShrink: 1,
         width: 'calc(50% - 10px)'
       },
       [theme.breakpoints.up('lg')]: {
-        width: 'calc(33.33% - 20px)'
+        width: 'calc(33.33% - 13.3px)'
       }
     }
   } else {
@@ -86,7 +87,9 @@ export const Content = styled('div', { shouldForwardProp })<{$fullWidth?: boolea
 
 export const Thumbnail = styled('img', { shouldForwardProp })<{$fullWidth?: boolean}>(({theme, $fullWidth}) => {
   let styles: CSSObject = {
-    maxWidth: '100%'
+    maxWidth: '100%',
+    aspectRatio: '16/9',
+    minHeight: 175
   };
   if ($fullWidth) {
     styles = {
