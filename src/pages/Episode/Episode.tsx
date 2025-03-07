@@ -36,7 +36,7 @@ export const Episode = () => {
           src={data?.thumbnailUrl}
           mb={1}
         />
-        <Box p={4} pb={0}>
+        <Box p={4} pb={{ lg: 0 }}>
           <Typography
             component="h3"
             variant="subtitle2"
@@ -64,10 +64,11 @@ export const Episode = () => {
           <Box
             component="a"
             href={data?.wikiUrl}
-            sx={{ typography: "body2" }}
+            sx={{ typography: "body2", wordBreak: "break-word" }}
             target="_blank"
             color="#000"
             fontWeight={700}
+            maxWidth="100%"
           >
             {data?.wikiUrl}
           </Box>
